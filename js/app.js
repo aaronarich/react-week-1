@@ -1,11 +1,22 @@
+const Highlight = ({children, type}) => (
+  <span className={`relative highlight highlight-${type}`}>
+    <span className="relative z-2">{children}</span>
+  </span>
+);
+
 const Intro = () => (
-  <div className="m-auto-ns f4 f3-m f2-l tc w-80-l normal">
+  <div className="center-ns f4 f3-m f2-l tc w-80-l normal">
     <div className="mb3 mb4-ns">
-      Lost in Tokyo is a directory of fun places to see, play in and explore, in Tokyo, Japan.
+      <Highlight type="aqua">Lost in Tokyo</Highlight> is a directory of fun places to see, play in
+      and <Highlight type="yellow">explore</Highlight>, in <Highlight type="blue">Tokyo</Highlight>,
+      Japan.
     </div>
     <div>
-      From museums and galleries, to robot restaurants and kitten cafes, Tokyo is the gift that
-      keeps on giving. Dattebayo!
+      From <Highlight type="blue">museums</Highlight> and{' '}
+      <Highlight type="blue">galleries</Highlight>, to{' '}
+      <Highlight type="pink">robot restaurants</Highlight> and{' '}
+      <Highlight type="pink">kitten cafes</Highlight>, Tokyo is the gift that keeps on giving.{` `}
+      <Highlight type="yellow">Dattebayo!</Highlight>
     </div>
   </div>
 );
@@ -13,7 +24,6 @@ const Intro = () => (
 const App = () => (
   <div>
     <div className="min-vh-100 ph4 flex flex-column">
-      {/* our navigation component */}
       <Intro />
     </div>
     <div className="flex flex-wrap container">
