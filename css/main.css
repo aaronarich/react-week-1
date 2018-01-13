@@ -11,3 +11,30 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.highlight {
+  padding-bottom: 0.25em;
+  white-space: nowrap;
+}
+
+.highlight-pink:before {
+  background-color: #ff00e6;
+}
+
+.highlight-blue:before {
+  background-color: #0525ff;
+}
+
+.highlight-aqua:before {
+  height: 14px;
+  background-image: url('../images/zigzag.svg');
+  background-repeat: repeat-x;
+  background-position-y: bottom;
+}
+
+.highlight-yellow:before {
+  height: 10px;
+  background-image: url('../images/wave.svg');
+  background-repeat: repeat-x;
+  background-position-y: bottom;
+}
