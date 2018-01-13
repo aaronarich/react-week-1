@@ -17,6 +17,16 @@ body {
   white-space: nowrap;
 }
 
+.highlight:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  z-index: 1;
+}
+
 .highlight-pink:before {
   background-color: #ff00e6;
 }
