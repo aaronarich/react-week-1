@@ -48,3 +48,15 @@ body {
   background-repeat: repeat-x;
   background-position-y: bottom;
 }
+
+@media (min-width: 480px) {
+  .m-auto-ns {
+    margin: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-width: 120px;
+  }
+}

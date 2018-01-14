@@ -2,8 +2,10 @@ const Nav = () => (
   <nav className="pt3 pt4-ns mb4 mb0-ns">
     <ul className="list flex flex-wrap flex-nowrap-ns justify-between items-center pa0 ma0">
       {menu.map(item => (
-        <li className={item.className}>
-          <a href={item.href}>{item.children}</a>
+        <li className={`mh2-ns f6 f4-l tc ${item.className}`}>
+          <a className="white no-underline" href={item.href}>
+            {item.children}
+          </a>
         </li>
       ))}
     </ul>
@@ -17,7 +19,7 @@ const Highlight = ({children, type}) => (
 );
 
 const Intro = () => (
-  <div className="center-ns f4 f3-m f2-l tc w-80-l normal">
+  <div className="m-auto-ns f4 f3-m f2-l tc w-80-l normal">
     <div className="mb3 mb4-ns">
       <Highlight type="aqua">Lost in Tokyo</Highlight> is a directory of fun places to see, play in
       and <Highlight type="yellow">explore</Highlight>, in <Highlight type="blue">Tokyo</Highlight>,
