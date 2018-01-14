@@ -1,7 +1,11 @@
 const NavItem = ({ className, href, children, logo }) => (
   <li className={`mh2-ns f6 f4-l tc ${className}`}>
     <a className="white no-underline" href={href}>
-      {logo ? <img src="/images/logo.svg" className="db center logo" /> : children}
+      {logo ? (
+        <img src="../images/logo.svg" className="db center logo" />
+      ) : (
+        children
+      )}
     </a>
   </li>
 );
@@ -38,13 +42,23 @@ const Intro = () => (
   </div>
 );
 
+const Attraction = ({ title, description, image, className }) => (
+  <div className={className}>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    <img src={`../images/${image}`} />
+  </div>
+);
+
 const App = () => (
   <div>
     <div className="min-vh-100 ph4 flex flex-column">
       <Nav />
       <Intro />
     </div>
-    <div className="flex flex-wrap container" />
+    <div className="flex flex-wrap container">
+      {attractions.map(attraction => <Attraction {...attraction} />)}
+    </div>
   </div>
 );
 
