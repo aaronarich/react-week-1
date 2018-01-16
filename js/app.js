@@ -47,6 +47,20 @@ class Attraction extends React.Component {
     this.state = {
       showInfo: false
     };
+    this.toggleInfo = this.toggleInfo.bind(this);
+    this.closeInfo = this.closeInfo.bind(this);
+  }
+
+  toggleInfo() {
+    this.setState((prevState, props) => ({
+      showInfo: !prevState.showInfo
+    }));
+  }
+
+  closeInfo() {
+    this.setState((prevState, props) => ({
+      showInfo: false
+    }));
   }
 
   render() {
@@ -55,7 +69,8 @@ class Attraction extends React.Component {
     return (
       <div
         className={`ph4 ph5-ns ph0-l mb4 mb5-ns w-100 overflow-hidden pointer attraction ${className}`}
-        onClick={() => this.setState({ showInfo: true })}
+        onClick={this.toggleInfo}
+        onMouseLeave={this.closeInfo}
       >
         <div className="relative">
           <div
