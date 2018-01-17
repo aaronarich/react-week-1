@@ -41,7 +41,7 @@ const Intro = () => (
   </div>
 );
 
-const Overlay = ({ showInfo, title, description }) => (
+const Overlay = ({ showInfo, title, description, link }) => (
   <div
     className="absolute w-100 h-100 flex items-center pa3 pa4-ns bg-aqua overlay"
     style={{
@@ -55,6 +55,13 @@ const Overlay = ({ showInfo, title, description }) => (
       <p className="lh-title lh-copy-ns mv0 black f6 measure-l">
         {description}
       </p>
+      {link ? (
+        <p className="lh-title lh-copy-ns mv0 black f6 measure-l">
+          More Information: <a href={link}>{link}</a>
+        </p>
+      ) : (
+        ""
+      )}
     </div>
   </div>
 );
@@ -87,7 +94,7 @@ class Attraction extends React.Component {
     return (
       <div
         className={`ph4 ph5-ns ph0-l mb4 mb5-ns w-100 overflow-hidden pointer attraction ${className}`}
-        onClick={this.toggleInfo}
+        onMouseEnter={this.toggleInfo}
         onMouseLeave={this.closeInfo}
       >
         <div className="relative">
